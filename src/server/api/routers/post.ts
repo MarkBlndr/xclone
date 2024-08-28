@@ -21,6 +21,7 @@ export const postRouter = createTRPCRouter({
       // simulate a slow db call
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return ctx.db.post.create({
         data: {
           name: input.name,
@@ -30,6 +31,7 @@ export const postRouter = createTRPCRouter({
     }),
 
   getLatest: protectedProcedure.query(({ ctx }) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return ctx.db.post.findFirst({
       orderBy: { createdAt: "desc" },
       where: { createdBy: { id: ctx.session.user.id } },
