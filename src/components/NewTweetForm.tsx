@@ -3,6 +3,7 @@ import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { Button } from "./Button";
 import { ProfileImage } from "./ProfileImage";
 
+// Update the text area size dynamically
 function updateTextAreaSize(textArea?: HTMLTextAreaElement) {
   if (textArea == null) return;
   textArea.style.height = "0";

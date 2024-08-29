@@ -26,7 +26,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <div className="container mx-auto flex items-start sm:pr-4">
         <SideNav />
         <div className="min-h-screen flex-grow border-x">
-          <Component {...pageProps} />
+          <Component {...pageProps} /> {/* render all the children */}
         </div>
       </div>
     </SessionProvider>
